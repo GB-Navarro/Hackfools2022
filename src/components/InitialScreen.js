@@ -3,24 +3,24 @@ export default function InitialScreen() {
 
     const questions = [
         {
-            id: 1,
-            question: "Qual das seguintes opções você considera mais relevante para a sua entrega?",
+            id: 10,
+            question: "Neste mês, estamos realizando uma campanha contra a fome na cidade de São Paulo fazendo doações de pizza para pessoas em situação vulnerável. Você deseja contribuir?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Quero contribuir hoje mesmo!"
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Sim, mas contribuirei numa próxima."
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Infelizmente não consigo"
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Não"
                 }
             ],
             answered: false
@@ -211,7 +211,7 @@ export default function InitialScreen() {
         },
         {
             id: 10,
-            question: "",
+            question: "Qual das seguintes opções você considera mais relevante para a sua entrega?",
             alternatives: [
                 {
                     number: 1,
@@ -231,7 +231,7 @@ export default function InitialScreen() {
                 }
             ],
             answered: false
-        }
+        },
     ]
 
     const couriers = [
@@ -283,7 +283,9 @@ export default function InitialScreen() {
                     <>
                         <Box>
                             <Text>{question.question}</Text>
-                            <Select>
+                            <Select onChange={(e) => {
+                                console.log(e.target.value);
+                            }}>
                                 {question.alternatives.map((alternative) => {
                                     return (
                                         <>
