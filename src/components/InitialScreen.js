@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+import Couriers from "./Couriers";
+import react from "react";
+
 export default function InitialScreen() {
 
     const questions = [
         {
-            id: 10,
+            id: 1,
             question: "Neste mês, estamos realizando uma campanha contra a fome na cidade de São Paulo fazendo doações de pizza para pessoas em situação vulnerável. Você deseja contribuir?",
             alternatives: [
                 {
@@ -27,6 +30,29 @@ export default function InitialScreen() {
         },
         {
             id: 2,
+            question: "Qual das seguintes opções você considera mais relevante para a sua entrega?",
+            alternatives: [
+                {
+                    number: 1,
+                    text: "Temperatura certa"
+                },
+                {
+                    number: 2,
+                    text: "Integridade da pizza"
+                },
+                {
+                    number: 3,
+                    text: "Cordialidade"
+                },
+                {
+                    number: 4,
+                    text: "Entretenimento"
+                }
+            ],
+            answered: false
+        },
+        {
+            id: 3,
             question: "O quão você valoriza serviços que buscam inovações tecnológicas?",
             alternatives: [
                 {
@@ -49,7 +75,7 @@ export default function InitialScreen() {
             answered: false
         },
         {
-            id: 3,
+            id: 4,
             question: "Que tipo de veículo você gostaria que fizesse sua entrega?",
             alternatives: [
                 {
@@ -72,7 +98,7 @@ export default function InitialScreen() {
             answered: false
         },
         {
-            id: 4,
+            id: 5,
             question: "Você está com pressa?",
             alternatives: [
                 {
@@ -95,7 +121,7 @@ export default function InitialScreen() {
             answered: false
         },
         {
-            id: 5,
+            id: 6,
             question: "Você está se sentindo motivado/produtivo hoje?",
             alternatives: [
                 {
@@ -118,7 +144,7 @@ export default function InitialScreen() {
             answered: false
         },
         {
-            id: 6,
+            id: 7,
             question: "Você é uma pessoa higiênica?",
             alternatives: [
                 {
@@ -127,21 +153,21 @@ export default function InitialScreen() {
                 },
                 {
                     number: 2,
-                    text: "Não passo nem fio dental"
+                    text: "Sim tomo banho todo dia"
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Não, mas sou cheirosinho(a)"
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Não passo nem fio dental"
                 }
             ],
             answered: false
         },
         {
-            id: 7,
+            id: 8,
             question: "Você apoia a LGPD (Lei Geral de Proteção de Proteção de Dados)?",
             alternatives: [
                 {
@@ -164,7 +190,7 @@ export default function InitialScreen() {
             answered: false
         },
         {
-            id: 8,
+            id: 9,
             question: "Você apoia o armamento da população?",
             alternatives: [
                 {
@@ -187,7 +213,7 @@ export default function InitialScreen() {
             answered: false
         },
         {
-            id: 9,
+            id: 10,
             question: "Você mora sozinho?",
             alternatives: [
                 {
@@ -196,7 +222,7 @@ export default function InitialScreen() {
                 },
                 {
                     number: 2,
-                    text: "Não, moro meus filhos"
+                    text: "Não, moro meus filhos (mãe/pai de pet)"
                 },
                 {
                     number: 3,
@@ -209,29 +235,7 @@ export default function InitialScreen() {
             ],
             answered: false
         },
-        {
-            id: 10,
-            question: "Qual das seguintes opções você considera mais relevante para a sua entrega?",
-            alternatives: [
-                {
-                    number: 1,
-                    text: "Temperatura certa"
-                },
-                {
-                    number: 2,
-                    text: "Integridade da pizza"
-                },
-                {
-                    number: 3,
-                    text: "Cordialidade"
-                },
-                {
-                    number: 4,
-                    text: "Entretenimento"
-                }
-            ],
-            answered: false
-        },
+        
     ]
 
     const couriers = [
@@ -274,33 +278,43 @@ export default function InitialScreen() {
 
     ]
 
+    const [screen, setScreen] = react.useState(2);
+
     return (
         <>
             <Header> Delivery Match </Header>
-            <Main> Conte-nos como você quer que seja a sua experiência</Main>
-            {questions.map((question) => {
-                return (
-                    <>
-                        <Box>
-                            <Text>{question.question}</Text>
-                            <Select onChange={(e) => {
-                                console.log(e.target.value);
-                            }}>
-                                {question.alternatives.map((alternative) => {
-                                    return (
-                                        <>
-                                            <option>{alternative.text}</option>
-                                        </>
-                                    )
-                                })}
-                            </Select>
-                        </Box>
-                    </>
-                )
-            })}
-            <Box>
-                <Button>Enviar</Button>
-            </Box>
+            {
+                screen === 1 ? 
+                <>
+                    <Main> Conte-nos como você quer que seja a sua experiência</Main>
+                    {questions.map((question) => {
+                        return (
+                            <>
+                                <Box>
+                                    <Text>{question.question}</Text>
+                                    <Select onChange={(e) => {
+                                        console.log(e.target.value);
+                                    }}>
+                                        {question.alternatives.map((alternative) => {
+                                            return (
+                                                <>
+                                                    <option>{alternative.text}</option>
+                                                </>
+                                            )
+                                        })}
+                                    </Select>
+                                </Box>
+                            </>
+                        )
+                    })}
+                    <Box>
+                        <Button>Enviar</Button>
+                    </Box>
+                </>
+                :
+                <Couriers></Couriers>
+            }
+            
 
         </>
     )
