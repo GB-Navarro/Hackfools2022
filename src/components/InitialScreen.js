@@ -278,7 +278,7 @@ export default function InitialScreen() {
 
     ]
 
-    const [screen, setScreen] = react.useState(2);
+    const [screen, setScreen] = react.useState(1);
 
     return (
         <>
