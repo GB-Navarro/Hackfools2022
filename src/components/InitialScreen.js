@@ -3,50 +3,48 @@ import Couriers from "./Couriers";
 import react from "react";
 
 export default function InitialScreen() {
-
+//BREAK POINT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     const questions = [
-        {
-            id: 1,
-            question: "Neste mês, estamos realizando uma campanha contra a fome na cidade de São Paulo fazendo doações de pizza para pessoas em situação vulnerável. Você deseja contribuir?",
-            alternatives: [
-                {
-                    number: 1,
-                    text: "Quero contribuir hoje mesmo!"
-                },
-                {
-                    number: 2,
-                    text: "Sim, mas contribuirei numa próxima."
-                },
-                {
-                    number: 3,
-                    text: "Infelizmente não consigo"
-                },
-                {
-                    number: 4,
-                    text: "Não"
-                }
-            ],
-            answered: false
-        },
         {
             id: 2,
             question: "Qual das seguintes opções você considera mais relevante para a sua entrega?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Temperatura certa",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "empinaMoto"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Integridade da pizza",
+                    score:
+                    {
+                        courierCount: 40,
+                        courierType: "coach"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Cordialidade",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "fariaLimer"
+                    }
+
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Entretenimento",
+                    score:
+                    {
+                        courierCount: 50,
+                        courierType: "coach"
+                    }
                 }
             ],
             answered: false
@@ -57,19 +55,39 @@ export default function InitialScreen() {
             alternatives: [
                 {
                     number: 1,
-                    text: "Extremamente"
+                    text: "Extremamente",
+                    score:
+                    {
+                        courierCount: 40,
+                        courierType: "drone"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Muito"
+                    text: "Muito",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Médio"
+                    text: "Médio",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 4,
-                    text: "Pouco"
+                    text: "Pouco",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "miliciano"
+                    }
                 }
             ],
             answered: false
@@ -80,19 +98,39 @@ export default function InitialScreen() {
             alternatives: [
                 {
                     number: 1,
-                    text: "Um veículo sem rodas"
+                    text: "Um veículo sem rodas",
+                    score:
+                    {
+                        courierCount: 40,
+                        courierType: "drone"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Um veículo com uma roda"
+                    text: "Um veículo com uma roda",
+                    score:
+                    {
+                        courierCount: 40,
+                        courierType: "empinaMoto"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Um veículo com duas rodas"
+                    text: "Um veículo com duas rodas",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 4,
-                    text: "Um veículo com quatro rodas"
+                    text: "Um veículo com quatro rodas",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "miliciano"
+                    }
                 }
             ],
             answered: false
@@ -103,19 +141,39 @@ export default function InitialScreen() {
             alternatives: [
                 {
                     number: 1,
-                    text: "Claro, quero pra ontem"
+                    text: "Claro, quero pra ontem",
+                    score:
+                    {
+                        courierCount: 40,
+                        courierType: "empinaMoto"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Só um pouco"
+                    text: "Só um pouco",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "miliciano"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Tô tranquilo"
+                    text: "Tô tranquilo",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 4,
-                    text: "Sou do tempo da internet explorer, posso esperar"
+                    text: "Sou do tempo do internet explorer, posso esperar",
+                    score:
+                    {
+                        courierCount: 30,
+                        courierType: "fariaLimer"
+                    }
                 }
             ],
             answered: false
@@ -126,19 +184,39 @@ export default function InitialScreen() {
             alternatives: [
                 {
                     number: 1,
-                    text: "Claro, meu dia tem 48h"
+                    text: "Claro, meu dia tem 48h",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Aprender todas as dancinhas do tik tok conta como produtivo?"
+                    text: "Aprender todas as dancinhas do tik tok conta como produtivo?",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "stalker"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Não, fiquei o dia todo assistindo netflix"
+                    text: "Não, fiquei o dia todo assistindo netflix",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "coach"
+                    }
                 },
                 {
                     number: 4,
-                    text: "Me sentindo miserável"
+                    text: "Me sentindo miserável",
+                    score:
+                    {
+                        courierCount: 30,
+                        courierType: "coach"
+                    }
                 }
             ],
             answered: false
@@ -149,19 +227,39 @@ export default function InitialScreen() {
             alternatives: [
                 {
                     number: 1,
-                    text: "Sim, tenho mania de limpeza"
+                    text: "Sim, tenho mania de limpeza",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Sim tomo banho todo dia"
+                    text: "Sim tomo banho todo dia",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Não, mas sou cheirosinho(a)"
+                    text: "Não, mas sou cheirosinho(a)",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "stalker"
+                    }
                 },
                 {
                     number: 4,
-                    text: "Não passo nem fio dental"
+                    text: "Não passo nem fio dental",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "empinaMoto"
+                    }
                 }
             ],
             answered: false
@@ -172,19 +270,39 @@ export default function InitialScreen() {
             alternatives: [
                 {
                     number: 1,
-                    text: "Totalmente"
+                    text: "Totalmente",
+                    score:
+                    {
+                        courierCount: 5,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Em parte"
+                    text: "Em parte",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Não muito"
+                    text: "Não muito",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "drone"
+                    }
                 },
                 {
                     number: 4,
-                    text: "Não mesmo"
+                    text: "Não mesmo",
+                    score:
+                    {
+                        courierCount: 50,
+                        courierType: "stalker"
+                    }
                 }
             ],
             answered: false
@@ -195,19 +313,39 @@ export default function InitialScreen() {
             alternatives: [
                 {
                     number: 1,
-                    text: "Sou totalmente a favor"
+                    text: "Sou totalmente a favor",
+                    score:
+                    {
+                        courierCount: 60,
+                        courierType: "miliciano"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Apoio com ressalvas"
+                    text: "Apoio com ressalvas",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "empinaMoto"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Não acho que dê muito certo"
+                    text: "Não acho que dê muito certo",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "coach"
+                    }
                 },
                 {
                     number: 4,
-                    text: "Sou totalmente contra"
+                    text: "Sou totalmente contra",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "coach"
+                    }
                 }
             ],
             answered: false
@@ -218,106 +356,145 @@ export default function InitialScreen() {
             alternatives: [
                 {
                     number: 1,
-                    text: "Não, moro com mais pessoas"
+                    text: "Não, moro com mais pessoas",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "drone"
+                    }
                 },
                 {
                     number: 2,
-                    text: "Não, moro meus filhos (mãe/pai de pet)"
+                    text: "Não, moro meus filhos (mãe/pai de pet)",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "fariaLimer"
+                    }
                 },
                 {
                     number: 3,
-                    text: "Sim, mas tenho câmera de segurança"
+                    text: "Sim, mas tenho câmera de segurança",
+                    score:
+                    {
+                        courierCount: 10,
+                        courierType: "stalker"
+                    }
                 },
                 {
                     number: 4,
-                    text: "Sim...🤨"
+                    text: "Sim...🤨",
+                    score:
+                    {
+                        courierCount: 20,
+                        courierType: "empinaMoto"
+                    }
                 }
             ],
             answered: false
         },
-        
-    ]
-
-    const couriers = [
-        {
-            id: 1,
-            nome: "",
-            description: "",
-            score: 0
-        },
-        {
-            id: 2,
-            nome: "",
-            description: "",
-            score: 0
-        },
-        {
-            id: 3,
-            nome: "",
-            description: "",
-            score: 0
-        },
-        {
-            id: 4,
-            nome: "",
-            description: "",
-            score: 0
-        },
-        {
-            id: 5,
-            nome: "",
-            description: "",
-            score: 0
-        },
-        {
-            id: 6,
-            nome: "",
-            description: "",
-            score: 0
-        },
 
     ]
 
-    const [screen, setScreen] = react.useState(1);
+    let fariaLimer = 0;
+    let drone = 0;
+    let miliciano = 0;
+    let empinaMoto = 0;
+    let stalker = 0;
+    let naoRecebe = 0;
+    let coach = 0;
+    let [screen, setScreen] = react.useState(1);
+    let [higherScore, setHigherScore] = react.useState("");
 
     return (
         <>
             <Header> Delivery Match </Header>
             {
-                screen === 1 ? 
-                <>
-                    <Main> Conte-nos como você quer que seja a sua experiência</Main>
-                    {questions.map((question) => {
-                        return (
-                            <>
-                                <Box>
-                                    <Text>{question.question}</Text>
-                                    <Select onChange={(e) => {
-                                        console.log(e.target.value);
-                                    }}>
-                                        {question.alternatives.map((alternative) => {
-                                            return (
-                                                <>
-                                                    <option>{alternative.text}</option>
-                                                </>
-                                            )
-                                        })}
-                                    </Select>
-                                </Box>
-                            </>
-                        )
-                    })}
-                    <Box>
-                        <Button>Enviar</Button>
-                    </Box>
-                </>
-                :
-                <Couriers></Couriers>
+                screen === 1 ?
+                    <>
+                        <Main> Conte-nos como você quer que seja a sua experiência</Main>
+                        {questions.map((question) => {
+                            return (
+                                <>
+                                    <Box>
+                                        <Text>{question.question}</Text>
+                                        <Select onChange={(e) => {
+                                        }}>
+                                            {question.alternatives.map((alternative) => {
+                                                return (
+                                                    <>
+                                                        <option onClick={() => {
+                                                        }}>{alternative.text}</option>
+                                                        {setCourierScore(
+                                                            alternative.score.courierCount, alternative.score.courierType,
+                                                            fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe, coach
+                                                        )}
+                                                    </>
+                                                )
+                                            })}
+                                        </Select>
+                                    </Box>
+                                </>
+                            )
+                        })}
+                        <Box>
+                            <Button onClick={() => {
+                                let auxArray = [fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe];
+                                let aux = -9999;
+                                for (let i = 0; i < auxArray.length; i++) {
+                                    if (auxArray[i] > aux) {
+                                        aux = auxArray[i];
+                                    }
+                                }
+                                console.log(aux);
+                                if (aux === coach) {
+                                    setHigherScore("coach");
+                                    setScreen(2);
+                                } else if (aux === drone) {
+                                    setHigherScore("drone");
+                                    setScreen(2);
+                                } else if (aux === "miliciano") {
+                                    setHigherScore("miliciano");
+                                    setScreen(2);
+                                } else if (aux === "empinaMoto") {
+                                    setHigherScore("empinaMoto");
+                                    setScreen(2);
+                                } else if (aux === "stalker") {
+                                    setHigherScore("stalker");
+                                    setScreen(2);
+                                }else if (aux === "fariaLimer") {
+                                    setHigherScore("fariaLimer");
+                                    setScreen(2);
+                                }
+                            }}>Enviar</Button>
+                        </Box>
+                    </>
+                    :
+                    <Couriers type={higherScore}></Couriers>
             }
-            
+
 
         </>
     )
+
+    function setCourierScore(valueToSet, destinationType, fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe, coach) {
+        naoRecebe = naoRecebe;
+        if (destinationType === "fariaLimer") {
+            fariaLimer = valueToSet;
+        } else if (destinationType === "drone") {
+            drone = valueToSet;
+        } else if (destinationType === "miliciano") {
+            miliciano = valueToSet;
+        } else if (destinationType === "empinaMoto") {
+            empinaMoto = valueToSet;
+        } else if (destinationType === "stalker") {
+            stalker = valueToSet;
+        } else if (destinationType === "naoRecebe") {
+            naoRecebe = valueToSet;
+        } else if (destinationType === "coach") {
+            coach = valueToSet;
+        }
+    }
 }
 
 const Header = styled.header`
