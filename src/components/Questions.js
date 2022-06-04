@@ -49,84 +49,84 @@ export default function Questions(){
         },
         {
             id: 3,
-            question: "",
+            question: "Que tipo de veículo você gostaria que fizesse sua entrega?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Um veículo sem rodas"
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Um veículo com uma roda"
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Um veículo com duas rodas"
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Um veículo com quatro rodas"
                 }
             ],
             answered: false
         },
         {
             id: 4,
-            question: "",
+            question: "Você está com pressa?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Claro, quero pra ontem"
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Só um pouco"
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Tô tranquilo"
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Sou do tempo da internet explorer, posso esperar"
                 }
             ],
             answered: false
         },
         {
             id: 5,
-            question: "",
+            question: "Você está se sentindo motivado/produtivo hoje?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Claro, meu dia tem 48h"
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Aprender todas as dancinhas do tik tok conta como produtivo?"
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Não, fiquei o dia todo assistindo netflix"
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Me sentindo miserável"
                 }
             ],
             answered: false
         },
         {
             id: 6,
-            question: "",
+            question: "Você é uma pessoa higiênica?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Sim, tenho mania de limpeza"
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Não passo nem fio dental"
                 },
                 {
                     number: 3,
@@ -141,69 +141,69 @@ export default function Questions(){
         },
         {
             id: 7,
-            question: "",
+            question: "Você apoia a LGPD (Lei Geral de Proteção de Proteção de Dados)?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Totalmente"
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Em parte"
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Não muito"
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Não mesmo"
                 }
             ],
             answered: false
         },
         {
             id: 8,
-            question: "",
+            question: "Você apoia o armamento da população?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Sou totalmente a favor"
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Apoio com ressalvas"
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Não acho que dê muito certo"
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Sou totalmente contra"
                 }
             ],
             answered: false
         },
         {
             id: 9,
-            question: "",
+            question: "Você mora sozinho?",
             alternatives: [
                 {
                     number: 1,
-                    text: "Temperatura certa"
+                    text: "Não, moro com mais pessoas"
                 },
                 {
                     number: 2,
-                    text: "Integridade da pizza"
+                    text: "Não, moro meus filhos"
                 },
                 {
                     number: 3,
-                    text: "Cordialidade"
+                    text: "Sim, mas tenho câmera de segurança"
                 },
                 {
                     number: 4,
-                    text: "Entretenimento"
+                    text: "Sim...🤨"
                 }
             ],
             answered: false
@@ -237,32 +237,38 @@ export default function Questions(){
         {
             id:1,
             nome:"",
-            description:""
+            description:"",
+            score:0
         },
         {
             id:2,
             nome:"",
-            description:""
+            description:"",
+            score:0
         },
         {
             id:3,
             nome:"",
-            description:""
+            description:"",
+            score:0
         },
         {
             id:4,
             nome:"",
-            description:""
+            description:"",
+            score:0
         },
         {
             id:5,
             nome:"",
-            description:""
+            description:"",
+            score:0
         },
         {
             id:6,
             nome:"",
-            description:""
+            description:"",
+            score:0
         },
 
     ]
