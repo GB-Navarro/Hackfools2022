@@ -211,10 +211,10 @@ export default function InitialScreen() {
                 },
                 {
                     number: 4,
-                    text: "Me sentindo miserável",
+                    text: "Não, sou um fracasso😩",
                     score:
                     {
-                        courierCount: 30,
+                        courierCount: 40,
                         courierType: "coach"
                     }
                 }
