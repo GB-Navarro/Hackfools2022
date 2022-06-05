@@ -1,9 +1,11 @@
-import styled from 'styled-components';
 import Couriers from "./Couriers";
+import Header from "./Header.js";
+
+import styled from 'styled-components';
 import react from "react";
 
 export default function InitialScreen() {
-//BREAK POINT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     const questions = [
         {
             id: 2,
@@ -408,66 +410,72 @@ export default function InitialScreen() {
 
     return (
         <>
-            <Header> Delivery Match </Header>
+            <Header/>
             {
                 screen === 1 ?
                     <>
-                        <Main> Conte-nos como você quer que seja a sua experiência</Main>
-                        {questions.map((question) => {
-                            return (
-                                <>
-                                    <Box>
-                                        <Text>{question.question}</Text>
-                                        <Select onChange={(e) => {
-                                        }}>
-                                            {question.alternatives.map((alternative) => {
-                                                return (
-                                                    <>
-                                                        <option onClick={() => {
-                                                        }}>{alternative.text}</option>
-                                                        {setCourierScore(
-                                                            alternative.score.courierCount, alternative.score.courierType,
-                                                            fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe, coach
-                                                        )}
-                                                    </>
-                                                )
-                                            })}
-                                        </Select>
-                                    </Box>
-                                </>
-                            )
-                        })}
-                        <Box>
-                            <Button onClick={() => {
-                                let auxArray = [fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe];
-                                let aux = -9999;
-                                for (let i = 0; i < auxArray.length; i++) {
-                                    if (auxArray[i] > aux) {
-                                        aux = auxArray[i];
-                                    }
-                                }
-                                console.log(aux);
-                                if (aux === coach) {
-                                    setHigherScore("coach");
-                                    setScreen(2);
-                                } else if (aux === drone) {
-                                    setHigherScore("drone");
-                                    setScreen(2);
-                                } else if (aux === "miliciano") {
-                                    setHigherScore("miliciano");
-                                    setScreen(2);
-                                } else if (aux === "empinaMoto") {
-                                    setHigherScore("empinaMoto");
-                                    setScreen(2);
-                                } else if (aux === "stalker") {
-                                    setHigherScore("stalker");
-                                    setScreen(2);
-                                }else if (aux === "fariaLimer") {
-                                    setHigherScore("fariaLimer");
-                                    setScreen(2);
-                                }
-                            }}>Enviar</Button>
-                        </Box>
+                        <Main> 
+                            <h1>Conte-nos como você quer que seja a sua experiência</h1>
+                            <Section>
+                                {questions.map((question) => {
+                                    return (
+                                        <>
+                                            <Box>
+                                                <Text>{question.question}</Text>
+                                                <Select onChange={(e) => {
+                                                }}>
+                                                    {question.alternatives.map((alternative) => {
+                                                        {
+                                                            setCourierScore(
+                                                                alternative.score.courierCount, alternative.score.courierType,
+                                                                fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe, coach
+                                                            )
+                                                        }
+                                                        return (
+                                                            <>
+                                                                <option>{alternative.text}</option>
+
+                                                            </>
+                                                        )
+                                                    })}
+                                                </Select>
+                                            </Box>
+                                        </>
+                                    )
+                                })}
+                                <Box>
+                                    <Button onClick={() => {
+                                        let auxArray = [fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe];
+                                        console.log(auxArray);
+                                        let aux = -9999;
+                                        for (let i = 0; i < auxArray.length; i++) {
+                                            if (auxArray[i] > aux) {
+                                                aux = auxArray[i];
+                                            }
+                                        }
+                                        if (aux === coach) {
+                                            setHigherScore("coach");
+                                            setScreen(2);
+                                        } else if (aux === drone) {
+                                            setHigherScore("drone");
+                                            setScreen(2);
+                                        } else if (aux === "miliciano") {
+                                            setHigherScore("miliciano");
+                                            setScreen(2);
+                                        } else if (aux === "empinaMoto") {
+                                            setHigherScore("empinaMoto");
+                                            setScreen(2);
+                                        } else if (aux === "stalker") {
+                                            setHigherScore("stalker");
+                                            setScreen(2);
+                                        } else if (aux === "fariaLimer") {
+                                            setHigherScore("fariaLimer");
+                                            setScreen(2);
+                                        }
+                                    }}>Enviar</Button>
+                                </Box>
+                            </Section>
+                        </Main>
                     </>
                     :
                     <Couriers type={higherScore}></Couriers>
@@ -478,72 +486,89 @@ export default function InitialScreen() {
     )
 
     function setCourierScore(valueToSet, destinationType, fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe, coach) {
-        naoRecebe = naoRecebe;
         if (destinationType === "fariaLimer") {
             fariaLimer = valueToSet;
+            console.log("type", fariaLimer, "value", valueToSet)
         } else if (destinationType === "drone") {
             drone = valueToSet;
+            console.log("type", drone, "value", valueToSet)
         } else if (destinationType === "miliciano") {
             miliciano = valueToSet;
+            console.log("type", miliciano, "value", valueToSet)
         } else if (destinationType === "empinaMoto") {
             empinaMoto = valueToSet;
+            console.log("type", empinaMoto, "value", valueToSet)
         } else if (destinationType === "stalker") {
             stalker = valueToSet;
-        } else if (destinationType === "naoRecebe") {
-            naoRecebe = valueToSet;
+            console.log("type", stalker, "value", valueToSet)
         } else if (destinationType === "coach") {
             coach = valueToSet;
+            console.log("type", coach, "value", valueToSet)
         }
+
     }
 }
 
-const Header = styled.header`
-    background-color: #e68a2e;
-    height: 10vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 25px;
-    color: #EDEEE9;
-`
-
 const Main = styled.main`
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-top:10vh;
     color: #EDEEE9;
     font-weight:bold;
-    font-size:20px;
+    font-size:30px;
+    font-family: 'Indie Flower', cursive;
+
+    h1{
+        margin-bottom:50px;
+    }
+`
+const Section = styled.section`
+    width: 60%;
+    background: rgba( 110, 23, 34, 0.8 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-bottom:100px;
 `
 const Select = styled.select`
     width: 30vw;
     height: 3vh;
-    background-color: #edeee9;
+    background-color: #e68a2e;
     border: 1px solid #edeee9;
     border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+    font-size:15px;
 `
 const Text = styled.p`
     padding-bottom:10px;
-    color: #EDEEE9;
-    font-weight: bold;
+    color: #ffffff;
+    font-size: 22px;
+    font-family: 'Indie Flower', cursive;
 `
 const Box = styled.div`
     padding-top: 5vh;
     display:flex;
     flex-direction: column;
     align-items: center;
-    
 `
 const Button = styled.button`
     width: 10vw;
-    height: 3vh;
-    background-color: #edeee9;
+    height: 7vh;
+    background-color: #e68a2e;
     border: 1px solid #edeee9;
     border-radius: 5px;
-    color: #e68a2e;
+    color: #edeee9;
     font-weight: bold;
+    margin-bottom: 50px;
+    font-family:'Pacifico', cursive;
+    font-size:20px;
 `
+
 
 /*  
         Branco => #edeee9

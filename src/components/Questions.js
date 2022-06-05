@@ -233,46 +233,6 @@ export default function Questions(){
         }
     ]
 
-    const couriers = [
-        {
-            id:1,
-            nome:"",
-            description:"",
-            score:0
-        },
-        {
-            id:2,
-            nome:"",
-            description:"",
-            score:0
-        },
-        {
-            id:3,
-            nome:"",
-            description:"",
-            score:0
-        },
-        {
-            id:4,
-            nome:"",
-            description:"",
-            score:0
-        },
-        {
-            id:5,
-            nome:"",
-            description:"",
-            score:0
-        },
-        {
-            id:6,
-            nome:"",
-            description:"",
-            score:0
-        },
-
-    ]
-
     return(
         <>
             <h1></h1>
