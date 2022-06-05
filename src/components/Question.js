@@ -1,4 +1,6 @@
-export default function Questions(){
+import styled from "styled-components";
+
+export default function Question(props) {
 
     const questions = [
         {
@@ -233,9 +235,46 @@ export default function Questions(){
         }
     ]
 
-    return(
+    return (
         <>
-            <h1></h1>
+            <Box>
+                <Text>{props.text}</Text>
+                <Select onChange={(e) => {
+                }}>
+                    {props.alternatives.map((alternative) => {
+                        return (
+                            <>
+                                <option>{alternative.text}</option>
+
+                            </>
+                        )
+                    })}
+                </Select>
+            </Box>
         </>
     )
 }
+
+const Box = styled.div`
+    padding-top: 5vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+`
+const Text = styled.p`
+    padding-bottom:10px;
+    color: #ffffff;
+    font-size: 22px;
+    font-family: 'Indie Flower', cursive;
+`
+const Select = styled.select`
+    width: 30vw;
+    height: 3vh;
+    background-color: #e68a2e;
+    border: 1px solid #edeee9;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+    font-size:15px;
+`

@@ -1,4 +1,5 @@
 import Couriers from "./Couriers";
+import Question from "./Question"
 import Header from "./Header.js";
 
 import styled from 'styled-components';
@@ -398,81 +399,27 @@ export default function InitialScreen() {
 
     ]
 
-    let fariaLimer = 0;
-    let drone = 0;
-    let miliciano = 0;
-    let empinaMoto = 0;
-    let stalker = 0;
-    let naoRecebe = 0;
-    let coach = 0;
     let [screen, setScreen] = react.useState(1);
     let [higherScore, setHigherScore] = react.useState("");
 
     return (
         <>
-            <Header/>
+            <Header />
             {
                 screen === 1 ?
                     <>
-                        <Main> 
+                        <Main>
                             <h1>Conte-nos como você quer que seja a sua experiência</h1>
                             <Section>
                                 {questions.map((question) => {
                                     return (
                                         <>
-                                            <Box>
-                                                <Text>{question.question}</Text>
-                                                <Select onChange={(e) => {
-                                                }}>
-                                                    {question.alternatives.map((alternative) => {
-                                                        {
-                                                            setCourierScore(
-                                                                alternative.score.courierCount, alternative.score.courierType,
-                                                                fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe, coach
-                                                            )
-                                                        }
-                                                        return (
-                                                            <>
-                                                                <option>{alternative.text}</option>
-
-                                                            </>
-                                                        )
-                                                    })}
-                                                </Select>
-                                            </Box>
+                                            <Question text={question.question} alternatives={question.alternatives}/> 
                                         </>
                                     )
                                 })}
                                 <Box>
-                                    <Button onClick={() => {
-                                        let auxArray = [fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe];
-                                        console.log(auxArray);
-                                        let aux = -9999;
-                                        for (let i = 0; i < auxArray.length; i++) {
-                                            if (auxArray[i] > aux) {
-                                                aux = auxArray[i];
-                                            }
-                                        }
-                                        if (aux === coach) {
-                                            setHigherScore("coach");
-                                            setScreen(2);
-                                        } else if (aux === drone) {
-                                            setHigherScore("drone");
-                                            setScreen(2);
-                                        } else if (aux === "miliciano") {
-                                            setHigherScore("miliciano");
-                                            setScreen(2);
-                                        } else if (aux === "empinaMoto") {
-                                            setHigherScore("empinaMoto");
-                                            setScreen(2);
-                                        } else if (aux === "stalker") {
-                                            setHigherScore("stalker");
-                                            setScreen(2);
-                                        } else if (aux === "fariaLimer") {
-                                            setHigherScore("fariaLimer");
-                                            setScreen(2);
-                                        }
-                                    }}>Enviar</Button>
+                                    <Button>Enviar</Button>
                                 </Box>
                             </Section>
                         </Main>
@@ -480,33 +427,8 @@ export default function InitialScreen() {
                     :
                     <Couriers type={higherScore}></Couriers>
             }
-
-
         </>
     )
-
-    function setCourierScore(valueToSet, destinationType, fariaLimer, drone, miliciano, empinaMoto, stalker, naoRecebe, coach) {
-        if (destinationType === "fariaLimer") {
-            fariaLimer = valueToSet;
-            console.log("type", fariaLimer, "value", valueToSet)
-        } else if (destinationType === "drone") {
-            drone = valueToSet;
-            console.log("type", drone, "value", valueToSet)
-        } else if (destinationType === "miliciano") {
-            miliciano = valueToSet;
-            console.log("type", miliciano, "value", valueToSet)
-        } else if (destinationType === "empinaMoto") {
-            empinaMoto = valueToSet;
-            console.log("type", empinaMoto, "value", valueToSet)
-        } else if (destinationType === "stalker") {
-            stalker = valueToSet;
-            console.log("type", stalker, "value", valueToSet)
-        } else if (destinationType === "coach") {
-            coach = valueToSet;
-            console.log("type", coach, "value", valueToSet)
-        }
-
-    }
 }
 
 const Main = styled.main`
@@ -533,23 +455,6 @@ const Section = styled.section`
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     margin-bottom:100px;
 `
-const Select = styled.select`
-    width: 30vw;
-    height: 3vh;
-    background-color: #e68a2e;
-    border: 1px solid #edeee9;
-    border-radius: 5px;
-    color: #ffffff;
-    font-weight: bold;
-    font-family: 'Indie Flower', cursive;
-    font-size:15px;
-`
-const Text = styled.p`
-    padding-bottom:10px;
-    color: #ffffff;
-    font-size: 22px;
-    font-family: 'Indie Flower', cursive;
-`
 const Box = styled.div`
     padding-top: 5vh;
     display:flex;
@@ -568,10 +473,3 @@ const Button = styled.button`
     font-family:'Pacifico', cursive;
     font-size:20px;
 `
-
-
-/*  
-        Branco => #edeee9
-        Vermelho => #9d1722
-        Amarelo => #e68a2e
-*/
